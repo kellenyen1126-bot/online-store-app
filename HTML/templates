@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>線上商店</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>商品清單</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                {{ product.name }} - ${{ product.price }} (庫存: {{ product.stock }})
+                <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="post">
+                    <button type="submit">加入購物車</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('cart') }}">查看購物車</a>
+</body>
+</html>
