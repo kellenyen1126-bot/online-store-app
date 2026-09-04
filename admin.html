@@ -1,1 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>管理商品</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <h1>管理商品</h1>
+  <div id="admin-login">
+    <input type="password" id="admin-password" placeholder="輸入密碼">
+    <button onclick="adminLogin()">登入</button>
+  </div>
+  <div id="admin-panel" style="display:none;">
+    <input type="text" id="new-name" placeholder="商品名稱">
+    <input type="number" id="new-price" placeholder="價格">
+    <button onclick="addProduct()">新增商品</button>
+    <div id="admin-products"></div>
+  </div>
+  <a href="index.html">回商品清單</a>
+</body>
+</html>
 
