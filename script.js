@@ -1,40 +1,35 @@
-// 使用者帳號系統
-function getUsers() {
-  return JSON.parse(localStorage.getItem("users")) || [];
-}
-function saveUsers(users) {
-  localStorage.setItem("users", JSON.stringify(users));
+let cart = [];
+
+function addToCart(name, price) {
+  cart.push({ name, price });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert(name + " 已加入購物車！");
 }
 
-function register() {
-  const username = document.getElementById("reg-username").value;
-  const password = document.getElementById("reg-password").value;
-  if (!username || !password) { alert("請輸入完整資料"); return; }
-  const users = getUsers();
-  if (users.find(u=>u.username===username)) {
-    alert("帳號已存在");
-    return;
+function loadCart() {
+  cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartItems = document.getElementById("cart-items");
+  const cartTotal = document.getElementById("cart-total");
+  cartItems.innerHTML = "";
+  let total = 0;
+  cart.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = `${item.name} - NT$${item.price}`;
+    cartItems.appendChild(li);
+    total += item.price;
+  });
+  cartTotal.textContent = "總金額: NT$" + total;
+}
+
+function checkout() {
+  alert("結帳成功！");
+  localStorage.removeItem("cart");
+  cart = [];
+  loadCart();
+}
+
+window.onload = () => {
+  if (document.getElementById("cart-items")) {
+    loadCart();
   }
-  users.push({username, password});
-  saveUsers(users);
-  alert("註冊成功，請登入");
-  window.location.href = "login.html";
-}
-
-function login() {
-  const username = document.getElementById("login-username").value;
-  const password = document.getElementById("login-password").value;
-  const users = getUsers();
-  const user = users.find(u=>u.username===username && u.password===password);
-  if (user) {
-    localStorage.setItem("currentUser", username);
-    alert("登入成功");
-    window.location.href = "index.html";
-  } else {
-    alert("帳號或密碼錯誤");
-  }
-}
-
-function getCurrentUser() {
-  return localStorage.getItem("currentUser");
-}
+};
