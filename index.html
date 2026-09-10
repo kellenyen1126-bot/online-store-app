@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>線上商店</title>
+  <title>商品清單</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
   <h1>商品清單</h1>
-  <div id="product-list"></div>
   <nav>
-    <a href="cart.html">購物車</a> | 
-    <a href="orders.html">訂單紀錄</a> | 
+    <a href="cart.html">購物車</a> |
+    <a href="orders.html">訂單紀錄</a> |
     <a href="admin.html">管理商品</a>
   </nav>
+
+  <div class="products">
+    <div class="product">
+      <h3>薯片</h3>
+      <p>NT$50</p>
+      <button onclick="addToCart('薯片', 50)">加入購物車</button>
+    </div>
+    <div class="product">
+      <h3>巧克力</h3>
+      <p>NT$80</p>
+      <button onclick="addToCart('巧克力', 80)">加入購物車</button>
+    </div>
+  </div>
 </body>
 </html>
