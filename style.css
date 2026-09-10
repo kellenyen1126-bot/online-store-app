@@ -1,4 +1,49 @@
-body { font-family: Arial, sans-serif; margin: 20px; }
-h1 { color: #333; }
-button { margin: 5px; padding: 5px 10px; }
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
 
+h1 {
+  color: #333;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.product {
+  background: #fff;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.login-box {
+  background: #fff;
+  padding: 30px;
+  margin: 50px auto;
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #0056b3;
+}
