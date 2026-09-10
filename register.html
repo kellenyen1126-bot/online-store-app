@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
   <title>註冊</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
 <body>
-  <h1>註冊</h1>
-  <input type="text" id="reg-username" placeholder="帳號">
-  <input type="password" id="reg-password" placeholder="密碼">
-  <button onclick="register()">註冊</button>
-  <nav><a href="login.html">已有帳號？登入</a></nav>
+  <div class="login-box">
+    <h2>註冊新帳號</h2>
+    <form>
+      <input type="text" placeholder="輸入姓名" required>
+      <input type="email" placeholder="輸入電子郵件" required>
+      <input type="password" placeholder="輸入密碼" required>
+      <button type="submit">註冊</button>
+    </form>
+    <p>已經有帳號？ <a href="login.html">登入</a></p>
+  </div>
 </body>
 </html>
