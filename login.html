@@ -2,18 +2,25 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>登入</title>
+  <title>登入 / 註冊</title>
   <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js"></script>
 </head>
 <body>
-  <div class="login-box">
-    <h2>登入 Snack Store</h2>
-    <form>
-      <input type="email" placeholder="輸入電子郵件" required>
-      <input type="password" placeholder="輸入密碼" required>
+  <div class="auth-box">
+    <h2>登入</h2>
+    <form id="login-form">
+      <input type="email" id="login-email" placeholder="電子郵件" required>
+      <input type="password" id="login-password" placeholder="密碼" required>
       <button type="submit">登入</button>
     </form>
-    <p>沒有帳號？ <a href="register.html">註冊</a></p>
+
+    <h2>註冊</h2>
+    <form id="register-form">
+      <input type="email" id="register-email" placeholder="電子郵件" required>
+      <input type="password" id="register-password" placeholder="密碼" required>
+      <button type="submit">註冊</button>
+    </form>
   </div>
 </body>
 </html>
