@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
   <title>購物車</title>
@@ -8,9 +8,13 @@
 </head>
 <body>
   <h1>購物車</h1>
-  <div id="cart"></div>
+  <nav>
+    <a href="index.html">商品清單</a> |
+    <a href="orders.html">訂單紀錄</a>
+  </nav>
+
+  <ul id="cart-items"></ul>
+  <p id="cart-total">總金額: NT$0</p>
   <button onclick="checkout()">結帳</button>
-  <a href="index.html">回商品清單</a>
 </body>
 </html>
-
