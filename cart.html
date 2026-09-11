@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
   <title>購物車</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <h1>購物車</h1>
-  <nav>
-    <a href="index.html">商品清單</a> |
-    <a href="orders.html">訂單紀錄</a>
-  </nav>
-
-  <ul id="cart-items"></ul>
-  <p id="cart-total">總金額: NT$0</p>
-  <button onclick="checkout()">結帳</button>
+  {% if cart_items %}
+    <ul>
+      {% for item in cart_items %}
+        <li>{{ item.name }} - NT${{ item.price }} × {{ item.quantity }}</li>
+      {% endfor %}
+    </ul>
+    <p>總金額: NT${{ total }}</p>
+    <a href="/checkout"><button>結帳</button></a>
+  {% else %}
+    <p>購物車目前沒有商品。</p>
+  {% endif %}
+  <a href="/">返回商品清單</a>
 </body>
 </html>
