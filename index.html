@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
   <title>商品清單</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="script.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <h1>商品清單</h1>
-  <nav>
-    <a href="cart.html">購物車</a> |
-    <a href="orders.html">訂單紀錄</a> |
-    <a href="admin.html">管理商品</a>
-  </nav>
-  <div id="products"></div>
+  <ul>
+    {% for product in products %}
+      <li>{{ product.name }} - NT${{ product.price }}
+        <a href="/add_to_cart/{{ product.id }}">加入購物車</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="/cart">查看購物車</a>
 </body>
 </html>
