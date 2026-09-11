@@ -1,56 +1,37 @@
 body {
-  background-color: #2c3e50;
-  font-family: Arial, sans-serif;
+  font-family: "Microsoft JhengHei", sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
 }
 
-.login-container {
-  background: white;
-  width: 350px;
-  margin: 100px auto;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-.tab {
-  display: flex;
+h1 {
+  font-size: 28px;
   margin-bottom: 20px;
 }
 
-.tab button {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
+form {
+  margin-bottom: 30px;
 }
 
-.tab .active {
-  background-color: #27ae60;
-  color: white;
-}
-
-.login-form label {
+input {
   display: block;
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-.login-form input {
   width: 100%;
-  padding: 8px;
-  margin-top: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.signin-btn {
+button {
   width: 100%;
-  background-color: #27ae60;
+  background-color: #007bff;
   color: white;
   border: none;
   padding: 10px;
-  margin-top: 20px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
