@@ -1,49 +1,56 @@
 body {
+  background-color: #2c3e50;
   font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  margin: 0;
-  padding: 20px;
 }
 
-h1 {
-  color: #333;
-}
-
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #007bff;
-}
-
-.product {
-  background: #fff;
-  padding: 15px;
-  margin: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.login-box {
-  background: #fff;
+.login-container {
+  background: white;
+  width: 350px;
+  margin: 100px auto;
   padding: 30px;
-  margin: 50px auto;
-  width: 300px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
-input, button {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
+.tab {
+  display: flex;
+  margin-bottom: 20px;
 }
-button {
-  background: #007bff;
-  color: #fff;
+
+.tab button {
+  flex: 1;
+  padding: 10px;
   border: none;
   cursor: pointer;
+  font-weight: bold;
 }
-button:hover {
-  background: #0056b3;
+
+.tab .active {
+  background-color: #27ae60;
+  color: white;
+}
+
+.login-form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signin-btn {
+  width: 100%;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
