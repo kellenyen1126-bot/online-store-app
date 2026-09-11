@@ -1,35 +1,18 @@
-let cart = [];
+const signinTab = document.getElementById("signin-tab");
+const signupTab = document.getElementById("signup-tab");
+const signinForm = document.getElementById("signin-form");
+const signupForm = document.getElementById("signup-form");
 
-function addToCart(name, price) {
-  cart.push({ name, price });
-  localStorage.setItem("cart", JSON.stringify(cart));
-  alert(name + " 已加入購物車！");
-}
+signinTab.addEventListener("click", () => {
+  signinTab.classList.add("active");
+  signupTab.classList.remove("active");
+  signinForm.classList.remove("hidden");
+  signupForm.classList.add("hidden");
+});
 
-function loadCart() {
-  cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const cartItems = document.getElementById("cart-items");
-  const cartTotal = document.getElementById("cart-total");
-  cartItems.innerHTML = "";
-  let total = 0;
-  cart.forEach(item => {
-    const li = document.createElement("li");
-    li.textContent = `${item.name} - NT$${item.price}`;
-    cartItems.appendChild(li);
-    total += item.price;
-  });
-  cartTotal.textContent = "總金額: NT$" + total;
-}
-
-function checkout() {
-  alert("結帳成功！");
-  localStorage.removeItem("cart");
-  cart = [];
-  loadCart();
-}
-
-window.onload = () => {
-  if (document.getElementById("cart-items")) {
-    loadCart();
-  }
-};
+signupTab.addEventListener("click", () => {
+  signupTab.classList.add("active");
+  signinTab.classList.remove("active");
+  signupForm.classList.remove("hidden");
+  signinForm.classList.add("hidden");
+});
